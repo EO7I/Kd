@@ -20,7 +20,7 @@ spec:
       containers:
       - image: nginx
         name: nginx
-        ports:
+        port:
         - containerPort: 80
         resources: {}
 status: {}
