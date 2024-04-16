@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demo-nginx
+  name: demo-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-nginx
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: demo-nginx
+    spec:
+      containers:
+      - image: ipnginx
+        name: ipnginx
+        port:
+        - containerPort: 80
+        resources: {}
+status: {}
