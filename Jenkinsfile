@@ -94,8 +94,12 @@ pipeline {
         sh "git status"
         sh "git commit -m 'update the image tag'"
         sh "git branch -M main"
-        sh "git push -u origin main"
-        
+      }
+    }
+         stage('Push to Git Repository') {
+      steps {
+        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: githubCredential, usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+             sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/boulde/Kd.git
       }
     }
   }
