@@ -83,7 +83,7 @@ pipeline {
       steps {
         // git 계정 로그인, 해당 레포지토리의 main 브랜치에서 클론
         git credentialsId: githubCredential,
-            url: 'https://github.com/EO7I/Kd/cicd.git',
+            url: 'https://github.com/EO7I/cicd.git',
             branch: 'main'  
         
         // 이미지 태그 변경 후 메인 브랜치에 푸시
