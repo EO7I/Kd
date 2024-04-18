@@ -1,4 +1,9 @@
 namePrefix: prod-
-resources: 
+resources:
 - deployment.yaml
 - service.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: 730335456215.dkr.ecr.ap-northeast-2.amazonaws.com/eks-demo-repo
+  newTag: "19"
